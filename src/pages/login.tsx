@@ -1,21 +1,32 @@
+import { LoginRegisterContainer } from "@/components/LoginRegisterContainer";
 import api from "@/services/api";
+import { StyledLoginForm } from "@/styles/LoginForm";
+import { StyledLoginRegisterButton } from "@/styles/LoginRegisterButton";
 import { IClientLogin, IProps } from "@/types";
 import { GetServerSideProps, NextPage } from "next";
+import login from "../assets/login.png";
 
 const LoginPage: NextPage<IProps> = () => {
   return (
     <>
-      <div>
-        <h1>Weslcome back</h1>
-        <span>Welcome back! Please enter your details</span>
-        <form>
-          <input type={"email"} id={"email"} />
-          <input type={"password"} id={"password"} />
-          <button>Login</button>
-          <button>Login</button>
-        </form>
-      </div>
-      <div></div>
+      <LoginRegisterContainer props={login}>
+        <h1>Welcome back</h1>
+        <span className="welcomeSpan">
+          Welcome back! Please enter your details
+        </span>
+        <StyledLoginForm>
+          <label>email</label>
+          <input type={"email"} id={"email"} placeholder="enter your email" />
+          <label>password</label>
+          <input
+            type={"password"}
+            id={"password"}
+            placeholder="enter your password"
+          />
+          <span>Dont have an account? Signup</span>
+          <StyledLoginRegisterButton>Login</StyledLoginRegisterButton>
+        </StyledLoginForm>
+      </LoginRegisterContainer>
     </>
   );
 };
