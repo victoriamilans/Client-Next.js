@@ -2,9 +2,11 @@ import user from "../../assets/user.png";
 import Image from "next/image";
 import { Barr, MenuMobile, StyledHeaderMobile } from "@/styles/HeaderMobile";
 import { useState } from "react";
+import { useModal } from "@/context/ModalContext";
 
 export const DashboardHeaderMobile = () => {
   const [navbarMobile, setNavbarMobile] = useState(false);
+  const { setIsModalUpdateClientOpen } = useModal();
 
   function handleClick() {
     setNavbarMobile((isOpen) => !isOpen);
@@ -25,7 +27,9 @@ export const DashboardHeaderMobile = () => {
             <input type={"text"} id={"search"} placeholder="search" />
             <div className="navOptions">
               <h2>My contacts</h2>
-              <h2>Update profile</h2>
+              <h2 onClick={() => setIsModalUpdateClientOpen(true)}>
+                Update profile
+              </h2>
               <h2>All users</h2>
             </div>
             <div className="searchArea">

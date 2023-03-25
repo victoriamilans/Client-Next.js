@@ -6,8 +6,6 @@ export const StyledRegisterForm = styled.form`
 
   display: flex;
   flex-direction: column;
-
-  display: flex;
   align-self: center;
 
   margin-top: 50px;

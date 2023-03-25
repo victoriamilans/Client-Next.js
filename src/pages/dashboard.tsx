@@ -1,10 +1,21 @@
 import { ContactCard } from "@/components/ContactCard";
 import { DashboardHeader } from "@/components/Header";
 import { DashboardHeaderMobile } from "@/components/HeaderMobile";
+import { ModalDeleteContact } from "@/components/ModalDeleteContact";
+import { ModalUpdateContact } from "@/components/ModalUpdateContact";
+import { ModalUpdateClient } from "@/components/ModalUpdateClient";
+import { useModal } from "@/context/ModalContext";
 import { StyledDashboardContainer } from "@/styles/DashboardContainer";
 import { StyledDashboardContent } from "@/styles/DashboardContent";
 
 const Dashboard = () => {
+  const {
+    isModalUpdateClientOpen,
+    isModalUpdateContactOpen,
+    setIsModalUpdateContactOpen,
+    isModalDeleteContactOpen,
+    setIsModalDeleteContactOpen,
+  } = useModal();
   return (
     <>
       <StyledDashboardContainer>
@@ -25,6 +36,9 @@ const Dashboard = () => {
           </div>
         </StyledDashboardContent>
       </StyledDashboardContainer>
+      {isModalUpdateContactOpen && <ModalUpdateContact></ModalUpdateContact>}
+      {isModalDeleteContactOpen && <ModalDeleteContact></ModalDeleteContact>}
+      {isModalUpdateClientOpen && <ModalUpdateClient></ModalUpdateClient>}
     </>
   );
 };

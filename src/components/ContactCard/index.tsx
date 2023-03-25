@@ -1,6 +1,9 @@
+import { useModal } from "@/context/ModalContext";
 import { StyledContactCard } from "@/styles/ContactCard";
 
 export const ContactCard = () => {
+  const { setIsModalDeleteContactOpen, setIsModalUpdateContactOpen } =
+    useModal();
   return (
     <StyledContactCard>
       <div className="clientContent">
@@ -9,8 +12,12 @@ export const ContactCard = () => {
         <p>Phone: 19989484772</p>
       </div>
       <div className="buttonsContactArea">
-        <button>Editar</button>
-        <button>Excluir</button>
+        <button onClick={() => setIsModalUpdateContactOpen(true)}>
+          Editar
+        </button>
+        <button onClick={() => setIsModalDeleteContactOpen(true)}>
+          Excluir
+        </button>
       </div>
     </StyledContactCard>
   );
