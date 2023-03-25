@@ -38,4 +38,19 @@ export const StyledContactCard = styled.li`
       border-radius: 12px;
     }
   }
+
+  @media (max-width: 1147px) {
+    width: 90%;
+    max-width: 300px;
+
+    flex-wrap: nowrap;
+    align-items: center;
+
+    padding: 20px 10px;
+
+    .clientContent {
+      align-self: flex-start;
+      margin: 20px;
+    }
+  }
 `;

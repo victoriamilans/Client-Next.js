@@ -1,9 +1,10 @@
 import user from "../../assets/user.png";
 import Image from "next/image";
+import { StyledHeader } from "@/styles/Header";
 
 export const DashboardHeader = () => {
   return (
-    <header>
+    <StyledHeader>
       <div className="userInfo">
         <Image src={user} alt="user image" />
         <div>
@@ -20,6 +21,6 @@ export const DashboardHeader = () => {
         <input type={"text"} id={"search"} placeholder="search" />
         <button>Logout</button>
       </div>
-    </header>
+    </StyledHeader>
   );
 };

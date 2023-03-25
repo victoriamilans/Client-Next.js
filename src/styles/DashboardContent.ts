@@ -42,4 +42,26 @@ export const StyledDashboardContent = styled.div`
 
     gap: 40px;
   }
+
+  @media (max-width: 1147px) {
+    padding: 30px;
+    ul {
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      align-items: center;
+
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    .pageButtons {
+      button {
+        font-size: 0.8rem;
+
+        width: 40%;
+        max-width: 105px;
+      }
+    }
+  }
 `;
