@@ -1,7 +1,6 @@
 import {
   StyledModalContainer,
   StyledModalDeleteContainer,
-  StyledOverlay,
 } from "@/styles/ModalContainer";
 import { IContainerModalProps } from "@/types";
 
@@ -18,12 +17,12 @@ export const ModalContainer = ({
     !target.closest(".content") && closeModal();
   }
   return (
-    <StyledOverlay>
-      <StyledModalContainer onClick={(e: any) => handleModalClick(e)}>
-        <span>x</span>
+    <StyledModalContainer onClick={(e: any) => handleModalClick(e)}>
+      <div className="content">
+        <span onClick={() => closeModal()}>x</span>
         {children}
-      </StyledModalContainer>
-    </StyledOverlay>
+      </div>
+    </StyledModalContainer>
   );
 };
 
@@ -40,11 +39,11 @@ export const ModalContainerDelete = ({
     !target.closest(".content") && closeModal();
   }
   return (
-    <StyledOverlay>
-      <StyledModalDeleteContainer onClick={(e: any) => handleModalClick(e)}>
-        <span>x</span>
+    <StyledModalDeleteContainer onClick={(e: any) => handleModalClick(e)}>
+      <div className="content">
+        <span onClick={() => closeModal()}>x</span>
         {children}
-      </StyledModalDeleteContainer>
-    </StyledOverlay>
+      </div>
+    </StyledModalDeleteContainer>
   );
 };

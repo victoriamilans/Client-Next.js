@@ -1,8 +1,10 @@
 import user from "../../assets/user.png";
 import Image from "next/image";
 import { StyledHeader } from "@/styles/Header";
+import { useModal } from "@/context/ModalContext";
 
 export const DashboardHeader = () => {
+  const { setIsModalUpdateClientOpen } = useModal();
   return (
     <StyledHeader>
       <div className="userInfo">
@@ -14,7 +16,7 @@ export const DashboardHeader = () => {
       </div>
       <nav className="navBar">
         <h2>My contacts</h2>
-        <h2>Update profile</h2>
+        <h2 onClick={() => setIsModalUpdateClientOpen(true)}>Update profile</h2>
         <h2>All users</h2>
       </nav>
       <div className="searchArea">
