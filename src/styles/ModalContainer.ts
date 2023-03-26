@@ -53,16 +53,17 @@ export const StyledModalDeleteContainer = styled.div`
 
   .content {
     width: 90%;
-    max-width: 500px;
-    height: 200px;
+    max-width: 350px;
+    height: 250px;
 
     background-color: var(--color-primary);
     color: var(--white);
+
     font-weight: 100;
 
     border-radius: 15px;
 
-    padding: 40px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;

@@ -13,7 +13,10 @@ export const StyledHeaderMobile = styled.header`
   background-color: var(--color-primary-dark);
 
   img {
-    height: 20%;
+    width: 60px;
+    height: auto;
+
+    margin-right: 10px;
   }
 
   .userInfo {
