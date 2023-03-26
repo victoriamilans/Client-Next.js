@@ -7,15 +7,24 @@ import { ModalUpdateClient } from "@/components/ModalUpdateClient";
 import { useModal } from "@/context/ModalContext";
 import { StyledDashboardContainer } from "@/styles/DashboardContainer";
 import { StyledDashboardContent } from "@/styles/DashboardContent";
+import { useAuth } from "@/context/AuthContext";
+import { IContact } from "@/types";
+import { ModalAllClients } from "@/components/ModalAllClients";
+import { ModalCreateContact } from "@/components/ModalRegisterContact";
+import { ModalDeleteClient } from "@/components/ModalDeleteClient";
 
 const Dashboard = () => {
   const {
     isModalUpdateClientOpen,
     isModalUpdateContactOpen,
-    setIsModalUpdateContactOpen,
     isModalDeleteContactOpen,
-    setIsModalDeleteContactOpen,
+    isModalAllUsersOpen,
+    isModalCreateContactOpen,
+    isModalDeleteClientOpen,
+    setIsModalCreateContactOpen,
   } = useModal();
+
+  const { clientContactObject } = useAuth();
   return (
     <>
       <StyledDashboardContainer>
@@ -23,22 +32,40 @@ const Dashboard = () => {
         <DashboardHeaderMobile></DashboardHeaderMobile>
         <StyledDashboardContent>
           <ul>
-            <ContactCard></ContactCard>
-            <ContactCard></ContactCard>
-            <ContactCard></ContactCard>
-            <ContactCard></ContactCard>
-            <ContactCard></ContactCard>
-            <ContactCard></ContactCard>
+            {clientContactObject?.length ? (
+              clientContactObject.map((element: IContact) => {
+                return (
+                  <ContactCard
+                    key={element.id}
+                    id={element.id}
+                    fullName={element.fullName}
+                    email={element.email}
+                    phone={element.phone}
+                    isDefault={element.isDefault}
+                    password={""}
+                    createdAt={""}
+                    updatedAt={""}
+                    deletedAt={""}
+                  ></ContactCard>
+                );
+              })
+            ) : (
+              <div>
+                <h2>You have no registered contacts</h2>
+                <button onClick={() => setIsModalCreateContactOpen(true)}>
+                  Register contact
+                </button>
+              </div>
+            )}
           </ul>
-          <div className="pageButtons">
-            <button>Previous page</button>
-            <button>Next page</button>
-          </div>
         </StyledDashboardContent>
       </StyledDashboardContainer>
       {isModalUpdateContactOpen && <ModalUpdateContact></ModalUpdateContact>}
       {isModalDeleteContactOpen && <ModalDeleteContact></ModalDeleteContact>}
       {isModalUpdateClientOpen && <ModalUpdateClient></ModalUpdateClient>}
+      {isModalAllUsersOpen && <ModalAllClients></ModalAllClients>}
+      {isModalCreateContactOpen && <ModalCreateContact></ModalCreateContact>}
+      {isModalDeleteClientOpen && <ModalDeleteClient></ModalDeleteClient>}
     </>
   );
 };

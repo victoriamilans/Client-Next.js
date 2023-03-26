@@ -6,7 +6,7 @@ export const StyledLoginRegisterButton = styled.form`
   width: 249px;
   height: 41px;
 
-  border-radius: 12px;
+  border-radius: 8px;
 
   align-self: center;
 
@@ -15,6 +15,8 @@ export const StyledLoginRegisterButton = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  cursor: pointer;
 
   @media (max-width: 800px) {
     width: 70%;

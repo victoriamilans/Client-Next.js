@@ -1,3 +1,4 @@
+import { StyledModalAllClients } from "@/styles/ModalAllClients";
 import {
   StyledModalContainer,
   StyledModalDeleteContainer,
@@ -45,5 +46,27 @@ export const ModalContainerDelete = ({
         {children}
       </div>
     </StyledModalDeleteContainer>
+  );
+};
+
+export const ModalAllUsers = ({
+  children,
+  setIsModOpen,
+}: IContainerModalProps) => {
+  function closeModal() {
+    setIsModOpen((oldIsMod) => !oldIsMod);
+  }
+
+  function handleModalClick(e: MouseEvent) {
+    let target = e.target as HTMLElement;
+    !target.closest(".content") && closeModal();
+  }
+  return (
+    <StyledModalAllClients onClick={(e: any) => handleModalClick(e)}>
+      <div className="content">
+        <span onClick={() => closeModal()}>x</span>
+        {children}
+      </div>
+    </StyledModalAllClients>
   );
 };

@@ -10,6 +10,10 @@ export const ModalProvider = ({ children, setIsModOpen }: IProviderProps) => {
     useState(false);
   const [isModalDeleteContactOpen, setIsModalDeleteContactOpen] =
     useState(false);
+  const [isModalAllUsersOpen, setIsModalAllUsersOpen] = useState(false);
+  const [isModalCreateContactOpen, setIsModalCreateContactOpen] =
+    useState(false);
+  const [isModalDeleteClientOpen, setIsModalDeleteClientOpen] = useState(false);
 
   return (
     <ModalContext.Provider
@@ -20,6 +24,12 @@ export const ModalProvider = ({ children, setIsModOpen }: IProviderProps) => {
         isModalUpdateContactOpen,
         isModalDeleteContactOpen,
         setIsModalDeleteContactOpen,
+        setIsModalAllUsersOpen,
+        isModalAllUsersOpen,
+        isModalCreateContactOpen,
+        setIsModalCreateContactOpen,
+        isModalDeleteClientOpen,
+        setIsModalDeleteClientOpen,
       }}
     >
       {children}

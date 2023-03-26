@@ -13,26 +13,7 @@ export const StyledDashboardContent = styled.div`
 
   ul {
     width: 100%;
-    height: 90%;
-  }
-
-  .pageButtons {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-
-    button {
-      width: 130px;
-      height: 40px;
-
-      border-radius: 15px;
-
-      background-color: var(--color-primary-dark);
-      color: var(--white);
-
-      font-size: 1rem;
-    }
+    height: 100%;
   }
 
   ul {
@@ -41,6 +22,22 @@ export const StyledDashboardContent = styled.div`
     flex-wrap: wrap;
 
     gap: 40px;
+
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  ul::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ul::-webkit-scrollbar-track-piece {
+    background: var(--gray-1);
+    border-radius: 5px;
+  }
+  ul::-webkit-scrollbar-thumb {
+    background: var(--gray-3);
+    border-radius: 5px;
   }
 
   @media (max-width: 1147px) {

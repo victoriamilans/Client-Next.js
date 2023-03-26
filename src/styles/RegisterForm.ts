@@ -8,7 +8,14 @@ export const StyledRegisterForm = styled.form`
   flex-direction: column;
   align-self: center;
 
-  margin-top: 50px;
+  margin-top: 30px;
+
+  .errorMessage {
+    font-size: 0.7rem;
+    align-self: flex-end;
+    margin: 0 10px 2px 0;
+    color: #d54227;
+  }
 
   label {
     font-size: 0.8rem;

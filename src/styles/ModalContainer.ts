@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-export const StyledOverlay = styled.div``;
 export const StyledModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
