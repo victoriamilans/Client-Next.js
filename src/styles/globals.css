@@ -5,6 +5,7 @@
   box-sizing: border-box;
   border: none;
   font-family: "poppins", sans-serif;
+  font-weight: 100;
 }
 
 button {
@@ -20,6 +21,7 @@ li {
 :root {
   --color-primary: #5a5858;
   --color-primary-dark: #323234;
+  --dark-grey: #282828;
   --blue: #345ff5;
   --white: #ffffff;
   --grey: #d9d9d9;

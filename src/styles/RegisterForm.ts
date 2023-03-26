@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
-export const StyledLoginForm = styled.form`
+export const StyledRegisterForm = styled.form`
   width: 90%;
   height: 67%;
 
   display: flex;
   flex-direction: column;
-
-  display: flex;
   align-self: center;
 
-  margin-top: 80px;
+  margin-top: 30px;
+
+  .errorMessage {
+    font-size: 0.7rem;
+    align-self: flex-end;
+    margin: 0 10px 2px 0;
+    color: #d54227;
+  }
 
   label {
     font-size: 0.8rem;
@@ -23,7 +28,7 @@ export const StyledLoginForm = styled.form`
 
     border-radius: 5px;
 
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
   a {
@@ -39,13 +44,6 @@ export const StyledLoginForm = styled.form`
     letter-spacing: 1px;
 
     align-self: center;
-  }
-
-  .errorMessage {
-    font-size: 0.8rem;
-    align-self: flex-end;
-    margin: 0 10px 2px 0;
-    color: #d54227;
   }
 
   @media (max-width: 800px) {

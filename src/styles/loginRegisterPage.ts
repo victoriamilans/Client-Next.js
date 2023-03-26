@@ -21,8 +21,8 @@ export const StyledLoginResgisterPage = styled.div`
     background-color: var(--color-primary-dark);
 
     width: 45%;
-    height: 80%;
-    padding: 40px;
+    height: 85%;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ export const StyledLoginResgisterPage = styled.div`
     background-color: var(--white);
 
     width: 35%;
-    height: 80%;
+    height: 85%;
     padding: 40px;
 
     border-radius: 0 32px 32px 0;
