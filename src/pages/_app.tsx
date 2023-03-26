@@ -6,16 +6,22 @@ import "@/styles/reset.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
-    <AuthProvider>
-      <ContactProvider>
-        <ModalProvider>
-          <ToastContainer autoClose={2000} theme="dark" />
-          <Component {...pageProps} />
-        </ModalProvider>
-      </ContactProvider>
-    </AuthProvider>
+    <SessionProvider session={session}>
+      <AuthProvider>
+        <ContactProvider>
+          <ModalProvider>
+            <ToastContainer autoClose={2000} theme="dark" />
+            <Component {...pageProps} />
+          </ModalProvider>
+        </ContactProvider>
+      </AuthProvider>
+    </SessionProvider>
   );
 }

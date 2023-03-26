@@ -34,7 +34,6 @@ export const DashboardHeader = () => {
         </h2>
       </nav>
       <div className="searchArea">
-        <input type={"text"} id={"search"} placeholder="search" />
         <button>Logout</button>
       </div>
     </StyledHeader>

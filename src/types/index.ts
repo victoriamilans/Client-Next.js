@@ -78,15 +78,6 @@ export interface IClientReturn {
   contacts: IContact[];
 }
 
-export interface IClientPage {
-  currentPage: number;
-  nextPage: string;
-  previousPage: string;
-  resultsPage: number;
-  totalResults: number;
-  clients: IClient[];
-}
-
 export interface AuthProviderData {
   loginClient: (clientData: IClientLogin) => void;
   registerClient: (clientData: IClientRegister) => void;
@@ -96,9 +87,11 @@ export interface AuthProviderData {
   getClientsById: (clientId: string) => void;
   clientObject?: IClientReturn;
   clientContactObject?: IContact[];
-  allClientObject?: IClientPage;
+  allClientObject?: IClient[];
   clientToken: string;
   clientId: string;
+  setLoading: Dispatch<SetStateAction<boolean>>;
+  loading: boolean;
 }
 
 export interface ContactProviderData {

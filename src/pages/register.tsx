@@ -9,9 +9,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
 import registerImg from "../assets/register.png";
+import { Loading } from "@/components/Loading";
 
 const RegisterPage: NextPage<IProps> = () => {
-  const { registerClient } = useAuth();
+  const { registerClient, loading } = useAuth();
 
   const formschema = yup.object().shape({
     email: yup.string().email("Enter a valid email").required("Required email"),
@@ -43,6 +44,7 @@ const RegisterPage: NextPage<IProps> = () => {
 
   return (
     <>
+      {loading && <Loading />}
       <LoginRegisterContainer props={registerImg}>
         <h1>Create an account</h1>
         <span className="welcomeSpan">Welcome Please enter your details</span>

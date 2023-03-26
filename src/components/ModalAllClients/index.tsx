@@ -10,8 +10,8 @@ export const ModalAllClients = () => {
   return (
     <ModalAllUsers setIsModOpen={setIsModalAllUsersOpen}>
       <ul>
-        {allClientObject?.clients.length &&
-          allClientObject.clients.map((client) => {
+        {allClientObject?.length &&
+          allClientObject.map((client) => {
             return (
               <ClientCard
                 key={client.id}
@@ -22,10 +22,6 @@ export const ModalAllClients = () => {
             );
           })}
       </ul>
-      <div className="pageButtons">
-        <button>Previous Page</button>
-        <button>Next Page</button>
-      </div>
     </ModalAllUsers>
   );
 };

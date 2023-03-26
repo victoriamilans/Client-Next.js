@@ -12,6 +12,10 @@ import { IContact } from "@/types";
 import { ModalAllClients } from "@/components/ModalAllClients";
 import { ModalCreateContact } from "@/components/ModalRegisterContact";
 import { ModalDeleteClient } from "@/components/ModalDeleteClient";
+import { Loading } from "@/components/Loading";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
+import nookies from "nookies";
 
 const Dashboard = () => {
   const {
@@ -24,9 +28,10 @@ const Dashboard = () => {
     setIsModalCreateContactOpen,
   } = useModal();
 
-  const { clientContactObject } = useAuth();
+  const { clientContactObject, loading } = useAuth();
   return (
     <>
+      {loading && <Loading />}
       <StyledDashboardContainer>
         <DashboardHeader></DashboardHeader>
         <DashboardHeaderMobile></DashboardHeaderMobile>
@@ -68,6 +73,26 @@ const Dashboard = () => {
       {isModalDeleteClientOpen && <ModalDeleteClient></ModalDeleteClient>}
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const cookies = nookies.get(ctx);
+  const session = await getSession(ctx);
+
+  if (!cookies["client.token"] && !session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      client: cookies["client.id"] || session?.user?.name,
+    },
+  };
 };
 
 export default Dashboard;

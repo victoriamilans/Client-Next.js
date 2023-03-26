@@ -33,7 +33,6 @@ export const DashboardHeaderMobile = () => {
       <MenuMobile onClick={() => handleClick()}>
         {navbarMobile && (
           <nav className="navbarMobile">
-            <input type={"text"} id={"search"} placeholder="search" />
             <div className="navOptions">
               <h2>My contacts</h2>
               <h2 onClick={() => setIsModalUpdateClientOpen(true)}>
