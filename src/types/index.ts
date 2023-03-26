@@ -92,6 +92,7 @@ export interface AuthProviderData {
   clientId: string;
   setLoading: Dispatch<SetStateAction<boolean>>;
   loading: boolean;
+  logout: () => void;
 }
 
 export interface ContactProviderData {

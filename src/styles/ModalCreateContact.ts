@@ -6,7 +6,6 @@ export const StyledUpdateFormContact = styled.form`
 
   display: flex;
   flex-direction: column;
-
   align-self: center;
 
   margin-top: 30px;
@@ -26,11 +25,18 @@ export const StyledUpdateFormContact = styled.form`
     height: 20px;
 
     display: flex;
-    gap: 20px;
+    gap: 10px;
 
     select {
       border-radius: 5px;
     }
+  }
+
+  .errorMessage {
+    font-size: 0.8rem;
+    align-self: flex-end;
+    margin: 5px 10px 2px 0;
+    color: #d54227;
   }
 
   input {

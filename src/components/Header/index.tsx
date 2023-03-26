@@ -11,7 +11,7 @@ export const DashboardHeader = () => {
     setIsModalCreateContactOpen,
     setIsModalDeleteClientOpen,
   } = useModal();
-  const { clientObject } = useAuth();
+  const { clientObject, logout } = useAuth();
 
   return (
     <StyledHeader>
@@ -34,7 +34,7 @@ export const DashboardHeader = () => {
         </h2>
       </nav>
       <div className="searchArea">
-        <button>Logout</button>
+        <button onClick={() => logout()}>Logout</button>
       </div>
     </StyledHeader>
   );

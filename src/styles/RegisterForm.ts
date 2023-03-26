@@ -31,7 +31,13 @@ export const StyledRegisterForm = styled.form`
     margin-bottom: 25px;
   }
 
-  span {
+  a {
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+  }
+  .link {
     font-size: 0.7rem;
     font-weight: 100;
     color: var(--grey);

@@ -1,19 +1,21 @@
 import { LoginRegisterContainer } from "@/components/LoginRegisterContainer";
 import { useAuth } from "@/context/AuthContext";
-import api from "@/services/api";
 import { StyledLoginForm } from "@/styles/LoginForm";
 import { StyledLoginRegisterButton } from "@/styles/LoginRegisterButton";
 import { IClientLogin, IProps } from "@/types";
-import { GetServerSideProps, NextPage } from "next";
+import { NextPage } from "next";
 import loginImage from "../assets/login.png";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { Loading } from "@/components/Loading";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const LoginPage: NextPage<IProps> = () => {
   const { loginClient, loading } = useAuth();
+  const router = useRouter;
 
   const formSchema = yup.object().shape({
     email: yup.string().email("Enter a valid email").required("Required email"),
@@ -71,7 +73,10 @@ const LoginPage: NextPage<IProps> = () => {
             {...register("password")}
             onChange={(e) => setInputPassword(e.target.value)}
           />
-          <span>Dont have an account? Signup</span>
+
+          <Link href={"/register"}>
+            <span className="link">Dont have an account? Signup</span>
+          </Link>
           <StyledLoginRegisterButton onClick={handleSubmit(onFormSubmit)}>
             Login
           </StyledLoginRegisterButton>
@@ -82,12 +87,3 @@ const LoginPage: NextPage<IProps> = () => {
 };
 
 export default LoginPage;
-
-export const getServiceSideProps: GetServerSideProps<
-  IClientLogin
-> = async () => {
-  const response = await api.post("/login");
-  const client = response.data;
-
-  return { props: client };
-};

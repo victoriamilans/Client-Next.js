@@ -26,13 +26,26 @@ export const StyledLoginForm = styled.form`
     margin-bottom: 40px;
   }
 
-  span {
+  a {
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+  }
+  .link {
     font-size: 0.7rem;
     font-weight: 100;
     color: var(--grey);
     letter-spacing: 1px;
 
     align-self: center;
+  }
+
+  .errorMessage {
+    font-size: 0.8rem;
+    align-self: flex-end;
+    margin: 0 10px 2px 0;
+    color: #d54227;
   }
 
   @media (max-width: 800px) {

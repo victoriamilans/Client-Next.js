@@ -9,8 +9,9 @@ import {
 import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { setCookie } from "nookies";
+import { destroyCookie, setCookie } from "nookies";
 import { cookies } from "next/headers";
+import { signOut } from "next-auth/react";
 
 const AuthContext = createContext<AuthProviderData>({} as AuthProviderData);
 
@@ -112,6 +113,13 @@ export const AuthProvider = ({ children }: IProviderProps) => {
       });
   };
 
+  const logout = () => {
+    destroyCookie(null, "kenzie.token");
+    destroyCookie(null, "kenzie.user");
+    signOut();
+    router.push("/login");
+  };
+
   const getClientsById = (clientId: string) => {
     api
       .get(`/client/${clientId}`)
@@ -139,6 +147,7 @@ export const AuthProvider = ({ children }: IProviderProps) => {
         clientId,
         loading,
         setLoading,
+        logout,
       }}
     >
       {children}

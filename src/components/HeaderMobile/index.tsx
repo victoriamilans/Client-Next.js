@@ -15,7 +15,7 @@ export const DashboardHeaderMobile = () => {
   } = useModal();
   const { clientObject } = useAuth();
 
-  const { clientContactObject } = useAuth();
+  const { clientContactObject, logout } = useAuth();
 
   function handleClick() {
     setNavbarMobile((isOpen) => !isOpen);
@@ -47,7 +47,7 @@ export const DashboardHeaderMobile = () => {
               </h2>
             </div>
             <div className="searchArea">
-              <button>Logout</button>
+              <button onClick={() => logout()}>Logout</button>
             </div>
           </nav>
         )}

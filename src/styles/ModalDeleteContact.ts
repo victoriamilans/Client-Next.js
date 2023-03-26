@@ -11,6 +11,9 @@ export const StyledModalDeleteContact = styled.div`
 
   text-align: center;
 
+  font-size: 1.5rem;
+
+  padding-top: 20px;
   div {
     width: 100%;
     height: 35px;

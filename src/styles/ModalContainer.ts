@@ -17,7 +17,7 @@ export const StyledModalContainer = styled.div`
   .content {
     width: 90%;
     max-width: 500px;
-    height: 500px;
+    height: 560px;
 
     background-color: var(--color-primary);
     color: var(--white);

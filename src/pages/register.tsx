@@ -10,6 +10,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
 import registerImg from "../assets/register.png";
 import { Loading } from "@/components/Loading";
+import Link from "next/link";
 
 const RegisterPage: NextPage<IProps> = () => {
   const { registerClient, loading } = useAuth();
@@ -105,7 +106,9 @@ const RegisterPage: NextPage<IProps> = () => {
             onChange={(e) => setInputPhone(e.target.value)}
           />
 
-          <span>Do you have an account? Login</span>
+          <Link href={"/login"}>
+            <span className="link">Do you have an account? Login</span>
+          </Link>
           <StyledLoginRegisterButton onClick={handleSubmit(onFormSubmit)}>
             Signup
           </StyledLoginRegisterButton>

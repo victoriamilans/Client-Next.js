@@ -14,9 +14,7 @@ export const StyledDashboardContent = styled.div`
   ul {
     width: 100%;
     height: 100%;
-  }
 
-  ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -25,6 +23,35 @@ export const StyledDashboardContent = styled.div`
 
     overflow: hidden;
     overflow-y: auto;
+  }
+
+  .noContent {
+    background-color: var(--color-primary-dark);
+
+    font-size: 1rem;
+    text-align: center;
+
+    width: 50%;
+    max-width: 300px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 12px;
+
+    button {
+      width: 100px;
+      height: 30px;
+
+      background-color: var(--blue);
+      border-radius: 5px;
+
+      color: var(--white);
+    }
   }
 
   ul::-webkit-scrollbar {

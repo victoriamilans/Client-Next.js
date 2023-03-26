@@ -55,7 +55,7 @@ const Dashboard = () => {
                 );
               })
             ) : (
-              <div>
+              <div className="noContent">
                 <h2>You have no registered contacts</h2>
                 <button onClick={() => setIsModalCreateContactOpen(true)}>
                   Register contact

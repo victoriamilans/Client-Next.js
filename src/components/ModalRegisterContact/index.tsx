@@ -88,12 +88,7 @@ export const ModalCreateContact = () => {
         />
 
         <div className="option">
-          <label>Endereço Padrão?</label>
-          {isDefaultError ? (
-            <p className="errorMessage">enter your email</p>
-          ) : (
-            <p className="errorMessage">{errors.isDefault?.message}</p>
-          )}
+          <label>default contact?</label>
           <select
             {...register("isDefault")}
             onChange={(e) => setInputIsDefault(e.target.value)}
@@ -102,6 +97,11 @@ export const ModalCreateContact = () => {
             <option value={"true"}>Yes</option>
           </select>
         </div>
+        {isDefaultError ? (
+          <p className="errorMessage">this contact is default?</p>
+        ) : (
+          <p className="errorMessage">{errors.isDefault?.message}</p>
+        )}
         <button onClick={handleSubmit(onFormSubmit)}>Save</button>
       </StyledUpdateFormContact>
     </ModalContainer>

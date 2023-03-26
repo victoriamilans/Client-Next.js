@@ -36,7 +36,7 @@ export const StyledHeader = styled.div`
   }
 
   .navBar {
-    width: 30%;
+    width: 50%;
 
     display: flex;
     align-items: center;
@@ -53,15 +53,6 @@ export const StyledHeader = styled.div`
 
     display: flex;
     justify-content: space-evenly;
-
-    input {
-      width: 70%;
-      height: 38px;
-
-      padding: 10px;
-
-      border-radius: 13px;
-    }
   }
 
   button {
