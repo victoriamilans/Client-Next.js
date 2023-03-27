@@ -120,8 +120,8 @@ export const AuthProvider = ({ children }: IProviderProps) => {
   };
 
   const logout = () => {
-    destroyCookie(null, "kenzie.token");
-    destroyCookie(null, "kenzie.user");
+    destroyCookie(null, "client.token");
+    destroyCookie(null, "client.id");
     signOut();
     router.push("/login");
   };
@@ -154,6 +154,7 @@ export const AuthProvider = ({ children }: IProviderProps) => {
         loading,
         setLoading,
         logout,
+        setClientId,
       }}
     >
       {children}

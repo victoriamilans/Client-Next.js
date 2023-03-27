@@ -17,6 +17,7 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import nookies from "nookies";
 import { NextPage } from "next";
+import { useEffect } from "react";
 
 const Dashboard: NextPage<IProps> = () => {
   const {
@@ -30,6 +31,7 @@ const Dashboard: NextPage<IProps> = () => {
   } = useModal();
 
   const { clientContactObject, loading } = useAuth();
+
   return (
     <>
       {loading && <Loading />}

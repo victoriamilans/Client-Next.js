@@ -88,6 +88,7 @@ export interface AuthProviderData {
   allClientObject?: IClient[];
   clientToken: string;
   clientId: string;
+  setClientId: Dispatch<SetStateAction<string>>;
   setLoading: Dispatch<SetStateAction<boolean>>;
   loading: boolean;
   logout: () => void;
