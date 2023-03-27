@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/AuthContext";
 import { useModal } from "@/context/ModalContext";
-import { StyledModalDeleteContact } from "@/styles/ModalDeleteContact";
+import { StyledModalDeleteContact } from "@/components/ModalDeleteContact/ModalDeleteContact";
 import { ModalContainerDelete } from "../ModalContainer";
 
 export const ModalDeleteClient = () => {

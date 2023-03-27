@@ -1,6 +1,6 @@
 import { useContact } from "@/context/ContactContext";
 import { useModal } from "@/context/ModalContext";
-import { StyledUpdateForm } from "@/styles/ModalUpdateUser";
+import { StyledUpdateForm } from "@/components/ModalUpdateClient/ModalUpdateClient";
 import { IUpdateContact } from "@/types";
 import { ModalContainer } from "../ModalContainer";
 import { yupResolver } from "@hookform/resolvers/yup";
