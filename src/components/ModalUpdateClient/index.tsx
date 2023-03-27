@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/AuthContext";
 import { useModal } from "@/context/ModalContext";
-import { StyledUpdateForm } from "@/styles/ModalUpdateUser";
+import { StyledUpdateForm } from "@/components/ModalUpdateClient/ModalUpdateClient";
 import { iKeys, IUpdateClient } from "@/types";
 import { ModalContainer } from "../ModalContainer";
 import { yupResolver } from "@hookform/resolvers/yup";

@@ -2,7 +2,6 @@ import { AuthProvider } from "@/context/AuthContext";
 import { ContactProvider } from "@/context/ContactContext";
 import { ModalProvider } from "@/context/ModalContext";
 import "@/styles/globals.css";
-// import "@/styles/reset.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";

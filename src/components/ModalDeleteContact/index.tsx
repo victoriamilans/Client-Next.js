@@ -1,6 +1,6 @@
 import { useContact } from "@/context/ContactContext";
 import { useModal } from "@/context/ModalContext";
-import { StyledModalDeleteContact } from "@/styles/ModalDeleteContact";
+import { StyledModalDeleteContact } from "@/components/ModalDeleteContact/ModalDeleteContact";
 import { IContainerModalProps } from "@/types";
 import { ModalContainerDelete } from "../ModalContainer";
 
