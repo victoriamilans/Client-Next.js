@@ -10,8 +10,8 @@ import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { destroyCookie, setCookie } from "nookies";
-import { cookies } from "next/headers";
 import { signOut } from "next-auth/react";
+import { useModal } from "./ModalContext";
 
 const AuthContext = createContext<AuthProviderData>({} as AuthProviderData);
 
@@ -23,6 +23,8 @@ export const AuthProvider = ({ children }: IProviderProps) => {
   const [clientToken, setClientToken] = useState("");
   const [clientId, setClientId] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { setIsModalUpdateClientOpen, setIsModalDeleteClientOpen } = useModal();
 
   useEffect(() => {
     getClients();
@@ -78,11 +80,13 @@ export const AuthProvider = ({ children }: IProviderProps) => {
         toast.success("Updated successfully");
         setClientObject(response.data);
         setLoading(false);
+        setIsModalUpdateClientOpen(false);
       })
       .catch((err) => {
         console.log(err);
         toast.error(err.response.data.message);
         setLoading(false);
+        setIsModalUpdateClientOpen(false);
       });
   };
 
@@ -95,10 +99,12 @@ export const AuthProvider = ({ children }: IProviderProps) => {
         toast.success("deleted successfully");
         router.push("/login");
         setLoading(false);
+        setIsModalDeleteClientOpen(false);
       })
       .catch((err) => {
         toast.error(err.response.data.message);
         setLoading(false);
+        setIsModalDeleteClientOpen(false);
       });
   };
 

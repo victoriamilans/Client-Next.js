@@ -1,4 +1,4 @@
-import { LoadingContainer, LoadingIcon } from "@/styles/Loading";
+import { LoadingContainer, LoadingIcon } from "@/components/Loading/Loading";
 
 export const Loading = () => {
   return (

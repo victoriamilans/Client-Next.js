@@ -1,9 +1,10 @@
-import { StyledModalAllClients } from "@/styles/ModalAllClients";
+import { StyledModalAllClients } from "@/components/ModalAllClients/ModalAllClients";
+
+import { IContainerModalProps } from "@/types";
 import {
   StyledModalContainer,
   StyledModalDeleteContainer,
-} from "@/styles/ModalContainer";
-import { IContainerModalProps } from "@/types";
+} from "./ModalContainer";
 
 export const ModalContainer = ({
   children,

@@ -1,8 +1,9 @@
 import user from "../../assets/user.png";
 import Image from "next/image";
-import { StyledHeader } from "@/styles/Header";
+
 import { useModal } from "@/context/ModalContext";
 import { useAuth } from "@/context/AuthContext";
+import { StyledHeader } from "./Header";
 
 export const DashboardHeader = () => {
   const {

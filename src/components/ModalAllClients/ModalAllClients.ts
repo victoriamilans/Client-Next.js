@@ -68,6 +68,7 @@ export const StyledModalAllClients = styled.div`
 
     span {
       align-self: flex-end;
+      cursor: pointer;
       margin-bottom: 20px;
     }
   }

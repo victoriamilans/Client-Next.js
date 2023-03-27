@@ -48,6 +48,7 @@ export const StyledHeaderMobile = styled.header`
     h2 {
       font-size: 1rem;
       font-weight: 100;
+      cursor: pointer;
     }
   }
 
@@ -56,15 +57,6 @@ export const StyledHeaderMobile = styled.header`
 
     display: flex;
     justify-content: space-evenly;
-
-    input {
-      width: 70%;
-      height: 38px;
-
-      padding: 10px;
-
-      border-radius: 13px;
-    }
 
     button {
       width: 15%;
@@ -109,16 +101,6 @@ export const MenuMobile = styled.div`
     align-items: center;
     justify-content: space-around;
 
-    input {
-      width: 90%;
-      height: 30px;
-
-      border-radius: 13px;
-
-      padding: 10px;
-      margin-top: 20px;
-    }
-
     .searchArea {
       width: 50%;
       align-self: flex-end;
@@ -145,6 +127,7 @@ export const MenuMobile = styled.div`
       h2 {
         font-size: 1.5rem;
         font-weight: 100;
+        cursor: pointer;
       }
     }
   }
@@ -158,6 +141,7 @@ export const Barr = styled.span`
   border-radius: 30px;
   background-color: var(--white);
   transition: 0.25s ease-in-out;
+  cursor: pointer;
   :nth-child(1) {
     top: 0;
   }

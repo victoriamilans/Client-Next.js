@@ -1,6 +1,6 @@
 import { useContact } from "@/context/ContactContext";
 import { useModal } from "@/context/ModalContext";
-import { StyledContactCard } from "@/styles/ContactCard";
+import { StyledContactCard } from "@/components/ContactCard/ContactCard";
 import { IClient, IContact } from "@/types";
 
 export const ContactCard = ({

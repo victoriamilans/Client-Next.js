@@ -63,8 +63,6 @@ export interface IContact {
   length?: number;
 }
 
-export type iKeys = "fullName" | "email" | "password" | "phone" | "isDefault";
-
 export interface IClientReturn {
   id: string;
   email: string;

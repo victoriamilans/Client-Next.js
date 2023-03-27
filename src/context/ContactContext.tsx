@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "./AuthContext";
+import { useModal } from "./ModalContext";
 
 const ContactContext = createContext<ContactProviderData>(
   {} as ContactProviderData
@@ -21,13 +22,12 @@ const ContactContext = createContext<ContactProviderData>(
 
 export const ContactProvider = ({ children }: IProviderProps) => {
   const router = useRouter();
+  const { clientToken, clientId, getClientsById, setLoading } = useAuth();
   const {
-    clientToken,
-    clientId,
-    getClientsById,
-    clientContactObject,
-    setLoading,
-  } = useAuth();
+    setIsModalCreateContactOpen,
+    setIsModalDeleteContactOpen,
+    setIsModalUpdateContactOpen,
+  } = useModal();
   const [cardContactId, setCardContactId] = useState("");
 
   const registerContact = async (contactData: IContactRequest) => {
@@ -39,11 +39,13 @@ export const ContactProvider = ({ children }: IProviderProps) => {
         toast.success("Registered successfully");
         getClientsById(clientId);
         setLoading(false);
+        setIsModalCreateContactOpen(false);
       })
       .catch((err) => {
         console.log(err);
         toast.error(err.response.data.message);
         setLoading(false);
+        setIsModalCreateContactOpen(false);
       });
   };
 
@@ -56,11 +58,13 @@ export const ContactProvider = ({ children }: IProviderProps) => {
         getClientsById(clientId);
         toast.success("Updated successfully");
         setLoading(false);
+        setIsModalUpdateContactOpen(false);
       })
       .catch((err) => {
         console.log(err);
         toast.error(err.response.data.message);
         setLoading(false);
+        setIsModalUpdateContactOpen(false);
       });
   };
 
@@ -73,10 +77,12 @@ export const ContactProvider = ({ children }: IProviderProps) => {
         getClientsById(clientId);
         toast.success("deleted successfully");
         setLoading(false);
+        setIsModalDeleteContactOpen(false);
       })
       .catch((err) => {
         toast.error(err.response.data.message);
         setLoading(false);
+        setIsModalDeleteContactOpen(false);
       });
   };
 

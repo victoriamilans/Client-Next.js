@@ -1,5 +1,5 @@
-import { StyledClientCard } from "@/styles/ClientCard";
 import { IClient } from "@/types";
+import { StyledClientCard } from "./ClientCard";
 
 export const ClientCard = ({ fullName, email, phone }: IClient) => {
   return (

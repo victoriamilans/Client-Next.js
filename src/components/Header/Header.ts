@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,6 +45,7 @@ export const StyledHeader = styled.div`
     h2 {
       font-size: 1rem;
       font-weight: 100;
+      cursor: pointer;
     }
   }
 

@@ -8,7 +8,7 @@ import { useModal } from "@/context/ModalContext";
 import { StyledDashboardContainer } from "@/styles/DashboardContainer";
 import { StyledDashboardContent } from "@/styles/DashboardContent";
 import { useAuth } from "@/context/AuthContext";
-import { IContact } from "@/types";
+import { IContact, IProps } from "@/types";
 import { ModalAllClients } from "@/components/ModalAllClients";
 import { ModalCreateContact } from "@/components/ModalRegisterContact";
 import { ModalDeleteClient } from "@/components/ModalDeleteClient";
@@ -16,8 +16,9 @@ import { Loading } from "@/components/Loading";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import nookies from "nookies";
+import { NextPage } from "next";
 
-const Dashboard = () => {
+const Dashboard: NextPage<IProps> = () => {
   const {
     isModalUpdateClientOpen,
     isModalUpdateContactOpen,

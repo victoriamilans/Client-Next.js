@@ -1,6 +1,10 @@
 import user from "../../assets/user.png";
 import Image from "next/image";
-import { Barr, MenuMobile, StyledHeaderMobile } from "@/styles/HeaderMobile";
+import {
+  Barr,
+  MenuMobile,
+  StyledHeaderMobile,
+} from "@/components/HeaderMobile/HeaderMobile";
 import { useState } from "react";
 import { useModal } from "@/context/ModalContext";
 import { useAuth } from "@/context/AuthContext";

@@ -13,14 +13,14 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <AuthProvider>
-        <ContactProvider>
-          <ModalProvider>
+      <ModalProvider>
+        <AuthProvider>
+          <ContactProvider>
             <ToastContainer autoClose={2000} theme="dark" />
             <Component {...pageProps} />
-          </ModalProvider>
-        </ContactProvider>
-      </AuthProvider>
+          </ContactProvider>
+        </AuthProvider>
+      </ModalProvider>
     </SessionProvider>
   );
 }

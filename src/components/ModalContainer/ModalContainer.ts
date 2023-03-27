@@ -32,6 +32,7 @@ export const StyledModalContainer = styled.div`
 
     span {
       align-self: flex-end;
+      cursor: pointer;
     }
   }
 `;
@@ -69,6 +70,7 @@ export const StyledModalDeleteContainer = styled.div`
 
     span {
       align-self: flex-end;
+      cursor: pointer;
     }
   }
 `;
