@@ -46,7 +46,7 @@ const Dashboard: NextPage<IProps> = ({ client, token }) => {
     setClientToken(token);
     if (client) {
     }
-  }, []);
+  }, [client]);
 
   return (
     <>
