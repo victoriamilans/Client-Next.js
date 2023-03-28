@@ -13,13 +13,13 @@ import { ModalAllClients } from "@/components/ModalAllClients";
 import { ModalCreateContact } from "@/components/ModalRegisterContact";
 import { ModalDeleteClient } from "@/components/ModalDeleteClient";
 import { Loading } from "@/components/Loading";
+import { NextPage } from "next";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import nookies from "nookies";
-import { NextPage } from "next";
 import { useEffect } from "react";
 
-const Dashboard: NextPage<IProps> = () => {
+const Dashboard: NextPage<IProps> = ({ client, token }) => {
   const {
     isModalUpdateClientOpen,
     isModalUpdateContactOpen,
@@ -30,7 +30,23 @@ const Dashboard: NextPage<IProps> = () => {
     setIsModalCreateContactOpen,
   } = useModal();
 
-  const { clientContactObject, loading } = useAuth();
+  const {
+    clientContactObject,
+    loading,
+    setClientId,
+    setClientToken,
+    getClientsById,
+  } = useAuth();
+
+  useEffect(() => {
+    if (client) {
+      setClientId(client);
+      getClientsById(client);
+    }
+    setClientToken(token);
+    if (client) {
+    }
+  }, []);
 
   return (
     <>
@@ -79,6 +95,9 @@ const Dashboard: NextPage<IProps> = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  console.log("cookies:", nookies.get(ctx));
+  console.log("session:", await getSession(ctx));
+
   const cookies = nookies.get(ctx);
   const session = await getSession(ctx);
 
@@ -93,7 +112,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      client: cookies["client.id"],
+      client: cookies["client.id"] || session?.user,
       token: cookies["client.token"],
     },
   };

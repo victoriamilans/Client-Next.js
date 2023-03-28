@@ -86,9 +86,10 @@ export interface AuthProviderData {
   clientObject?: IClientReturn;
   clientContactObject?: IContact[];
   allClientObject?: IClient[];
-  clientToken: string;
-  clientId: string;
+  clientToken: string | undefined;
+  clientId: string | undefined;
   setClientId: Dispatch<SetStateAction<string>>;
+  setClientToken: Dispatch<SetStateAction<string>>;
   setLoading: Dispatch<SetStateAction<boolean>>;
   loading: boolean;
   logout: () => void;
@@ -104,11 +105,14 @@ export interface ContactProviderData {
 
 export interface IProps {
   token: string;
+  client?: string;
 }
 
 export interface IProviderProps {
   children: ReactNode;
   setIsModOpen?: Dispatch<SetStateAction<boolean>>;
+  client?: string;
+  token: string;
 }
 
 export interface IContainerModalPropsChildren {

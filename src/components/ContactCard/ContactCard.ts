@@ -14,12 +14,21 @@ export const StyledContactCard = styled.li`
 
   padding: 25px;
 
+  font-size: 1.2rem;
+  font-weight: 100;
+
   .clientContent {
     margin: 40px 0 0 10px;
     line-height: 25px;
 
+    width: 90%;
+
     font-size: 1rem;
     font-weight: 100;
+
+    overflow: auto;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
   }
 
   .buttonsContactArea {

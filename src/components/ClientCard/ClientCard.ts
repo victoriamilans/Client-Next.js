@@ -20,8 +20,19 @@ export const StyledClientCard = styled.li`
     margin: 40px 0 0 10px;
     line-height: 25px;
 
+    width: 90%;
+    height: 100%;
+
     font-size: 1.2rem;
     font-weight: 100;
+    overflow-wrap: break-word;
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    p {
+      margin-top: 10px;
+    }
   }
 
   @media (max-width: 1147px) {

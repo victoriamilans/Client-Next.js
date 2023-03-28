@@ -5,9 +5,9 @@ export const ClientCard = ({ fullName, email, phone }: IClient) => {
   return (
     <StyledClientCard>
       <div className="clientContent">
-        <p>{fullName}</p>
-        <p>{email}</p>
-        <p>{phone}</p>
+        <p>Name: {fullName}</p>
+        <p>Email: {email}</p>
+        <p>Phone: {phone}</p>
       </div>
     </StyledClientCard>
   );

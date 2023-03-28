@@ -42,8 +42,6 @@ export const AuthProvider = ({ children }: IProviderProps) => {
           path: "/",
         });
         getClientsById(response.data.client);
-        setClientToken(response.data.token);
-        setClientId(response.data.client);
         setLoading(false);
 
         toast.success("Welcome!");
@@ -155,6 +153,7 @@ export const AuthProvider = ({ children }: IProviderProps) => {
         setLoading,
         logout,
         setClientId,
+        setClientToken,
       }}
     >
       {children}
