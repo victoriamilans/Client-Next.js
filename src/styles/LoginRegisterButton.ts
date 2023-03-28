@@ -18,6 +18,10 @@ export const StyledLoginRegisterButton = styled.form`
 
   cursor: pointer;
 
+  :hover {
+    background-color: var(--dark-blue);
+  }
+
   @media (max-width: 800px) {
     width: 70%;
     max-width: 249px;

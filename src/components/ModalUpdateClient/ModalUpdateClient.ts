@@ -42,13 +42,9 @@ export const StyledUpdateForm = styled.form`
     color: var(--white);
 
     margin-top: 20px;
-  }
 
-  /* @media (max-width: 800px) {
-    flex-direction: column;
-
-    input {
-      height: 40px;
+    :hover {
+      background-color: var(--dark-blue);
     }
-  } */
+  }
 `;

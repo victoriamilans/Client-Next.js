@@ -45,6 +45,10 @@ export const StyledContactCard = styled.li`
       color: var(--white);
 
       border-radius: 12px;
+
+      :hover {
+        background-color: var(--dark-blue);
+      }
     }
   }
 

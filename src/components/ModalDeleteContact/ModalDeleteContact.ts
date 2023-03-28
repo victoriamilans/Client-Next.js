@@ -30,6 +30,10 @@ export const StyledModalDeleteContact = styled.div`
 
       background-color: var(--blue);
       color: var(--white);
+
+      :hover {
+        background-color: var(--dark-blue);
+      }
     }
   }
 `;

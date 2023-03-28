@@ -51,6 +51,10 @@ export const StyledDashboardContent = styled.div`
       border-radius: 5px;
 
       color: var(--white);
+
+      :hover {
+        background-color: var(--dark-blue);
+      }
     }
   }
 

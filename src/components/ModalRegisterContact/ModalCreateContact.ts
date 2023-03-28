@@ -60,5 +60,9 @@ export const StyledUpdateFormContact = styled.form`
     color: var(--white);
 
     margin-top: 20px;
+
+    :hover {
+      background-color: var(--dark-blue);
+    }
   }
 `;

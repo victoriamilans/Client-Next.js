@@ -23,7 +23,7 @@ export const LoadingContainer = styled.div`
   z-index: 99999999999999;
   h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 1rem;
     @media (min-width: 768px) {
       font-size: 3.5rem;
     }
@@ -35,8 +35,8 @@ export const LoadingIcon = styled.div`
   width: 150px;
 
   border-radius: 50%;
-  border: 10px solid var(--white);
-  border-left: 10px solid var(--color-primary);
+  border: 10px solid var(--color-primary);
+  border-left: 10px solid var(--dark-blue);
 
   animation-name: ${running};
   animation-duration: 1s;
@@ -44,7 +44,7 @@ export const LoadingIcon = styled.div`
   @media (min-width: 768px) {
     height: 300px;
     width: 300px;
-    border: 20px solid var(--white);
-    border-left: 20px solid var(--color-primary);
+    border: 20px solid var(--color-primary);
+    border-left: 20px solid var(--dark-blue);
   }
 `;
