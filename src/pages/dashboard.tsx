@@ -95,13 +95,9 @@ const Dashboard: NextPage<IProps> = ({ client, token }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  console.log("cookies:", nookies.get(ctx));
-  console.log("session:", await getSession(ctx));
-
   const cookies = nookies.get(ctx);
-  const session = await getSession(ctx);
 
-  if (!cookies["client.token"] && !session) {
+  if (!cookies["client.token"]) {
     return {
       redirect: {
         destination: "/login",
@@ -112,7 +108,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      client: cookies["client.id"] || session?.user,
+      client: cookies["client.id"],
       token: cookies["client.token"],
     },
   };
