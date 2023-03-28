@@ -93,7 +93,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      client: cookies["client.id"] || session?.user?.name,
+      client: cookies["client.id"],
+      token: cookies["client.token"],
     },
   };
 };
