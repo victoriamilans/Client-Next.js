@@ -37,7 +37,9 @@ export const ContactProvider = ({ children }: IProviderProps) => {
       .post(`/contact`, contactData)
       .then((response) => {
         toast.success("Registered successfully");
-        getClientsById(clientId);
+        if (clientId) {
+          getClientsById(clientId);
+        }
         setLoading(false);
         setIsModalCreateContactOpen(false);
       })
@@ -55,7 +57,9 @@ export const ContactProvider = ({ children }: IProviderProps) => {
     api
       .patch(`/contact/${contactId}`, contactData)
       .then((response) => {
-        getClientsById(clientId);
+        if (clientId) {
+          getClientsById(clientId);
+        }
         toast.success("Updated successfully");
         setLoading(false);
         setIsModalUpdateContactOpen(false);
@@ -74,7 +78,9 @@ export const ContactProvider = ({ children }: IProviderProps) => {
     api
       .delete(`/contact/${contactId}`)
       .then((response) => {
-        getClientsById(clientId);
+        if (clientId) {
+          getClientsById(clientId);
+        }
         toast.success("deleted successfully");
         setLoading(false);
         setIsModalDeleteContactOpen(false);
