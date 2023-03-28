@@ -112,7 +112,7 @@ export interface IProviderProps {
   children: ReactNode;
   setIsModOpen?: Dispatch<SetStateAction<boolean>>;
   client?: string;
-  token: string;
+  token?: string;
 }
 
 export interface IContainerModalPropsChildren {
